@@ -1,0 +1,15 @@
+.project
+.classpath
+.class
+.log
+.gradle/
+.settings/
+bin/
+build/
+temp/
+.vscode
+.DS_Store
+node_modules/
+security.properties
+
+!build.gradle
