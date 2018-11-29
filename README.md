@@ -13,3 +13,15 @@
 ## 04 : 클래스와 데이터 타입
 
 - github.com/eomcs/eomcs-java-project 에서 v1.6 과제 해결
+
+## 05 : 자바 기본 문법(흐름제어문) 활용
+
+- github.com/eomcs/eomcs-java-project 에서 v1.7 과제 해결
+
+## 06 : 메서드 활용
+
+- github.com/eomcs/eomcs-java-project 에서 v1.8 과제 해결
+
+## 07 : 클래스를 활용하여 메서드 분류
+
+- github.com/eomcs/eomcs-java-project 에서 v1.9 과제 해결
