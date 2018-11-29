@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class App {
 
   static Scanner keyboard = new Scanner(System.in);
-  
+
   static final int LENGTH = 10;
   
   static Member[] members = new Member[LENGTH];
@@ -15,7 +15,6 @@ public class App {
   
   public static void main(String[] args) {
     
-    // 사용할 객체에 의존 객체를 주입하기
     LessonHandler.keyboard = keyboard;
     
     while (true) {

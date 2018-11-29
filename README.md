@@ -25,3 +25,15 @@
 ## 07 : 클래스를 활용하여 메서드 분류
 
 - github.com/eomcs/eomcs-java-project 에서 v1.9 과제 해결
+
+## 08 : 패키지를 사용하여 역할에 따라 클래스 분류
+
+- github.com/eomcs/eomcs-java-project 에서 v2.0 과제 해결
+
+## 21 : 클래스 변수와 클래스 메서드의 한계를 경험
+
+- github.com/eomcs/eomcs-java-project 에서 v2.1 과제 해결
+
+## 22 : 인스턴스 변수와 인스턴스 메서드가 필요한 이유
+
+- github.com/eomcs/eomcs-java-project 에서 v2.2 과제 해결
