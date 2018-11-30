@@ -53,3 +53,8 @@
 ## 32 : 인터페이스, Iterator 디자인 패턴, 중첩클래스 사용 
 
 - github.com/eomcs/eomcs-java-project 에서 v3.2, v3.3 과제 해결
+
+
+## 34 : 자바 컬렉션 API 사용, Command 디자인 패턴, 예외처리
+
+- github.com/eomcs/eomcs-java-project 에서 v3.4, v3.5, v3.6 과제 해결
