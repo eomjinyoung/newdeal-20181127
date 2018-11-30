@@ -37,3 +37,19 @@
 ## 22 : 인스턴스 변수와 인스턴스 메서드가 필요한 이유
 
 - github.com/eomcs/eomcs-java-project 에서 v2.2 과제 해결
+
+## 24 : 생성자, setter/getter 사용
+
+- github.com/eomcs/eomcs-java-project 에서 v2.3, v2.4 과제 해결
+
+## 25 : 데이터 처리 코드를 별도의 클래스로 분리
+
+- github.com/eomcs/eomcs-java-project 에서 v2.5 과제 해결
+
+## 26 : 다형성, 다형적 변수, 제네릭
+
+- github.com/eomcs/eomcs-java-project 에서 v2.6, v2.7 과제 해결
+
+## 32 : 인터페이스, Iterator 디자인 패턴, 중첩클래스 사용 
+
+- github.com/eomcs/eomcs-java-project 에서 v3.2, v3.3 과제 해결
