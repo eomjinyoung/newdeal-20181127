@@ -73,3 +73,8 @@
 
 - SQL 삽입 공격을 이해하고 그 공격을 막아라!
 - Statement의 createStatement() 대신 PreparedStatement의 prepareStatement()를 사용하라.
+
+## 49 : MyBatis 도입
+
+- 자바 소스에서 SQL 코드를 분리하라!
+- JDBC 코드를 캡슐화한 MyBatis로 대체하라!
