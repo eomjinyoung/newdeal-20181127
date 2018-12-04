@@ -1,4 +1,4 @@
-package com.eomcs.lms.dao;
+package com.eomcs.lms.dao.impl;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,9 +7,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import org.mariadb.jdbc.Driver;
+import com.eomcs.lms.dao.BoardDao;
 import com.eomcs.lms.domain.Board;
 
-public class BoardDao {
+public class MariaDBBoardDao implements BoardDao {
   
   public List<Board> findAll() throws Exception {
     DriverManager.registerDriver(new Driver());

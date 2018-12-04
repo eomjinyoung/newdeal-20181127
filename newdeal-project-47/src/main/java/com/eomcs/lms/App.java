@@ -6,6 +6,7 @@ import java.util.Queue;
 import java.util.Scanner;
 import java.util.Stack;
 import com.eomcs.lms.dao.BoardDao;
+import com.eomcs.lms.dao.impl.MariaDBBoardDao;
 import com.eomcs.lms.handler.BoardAddCommand;
 import com.eomcs.lms.handler.BoardDeleteCommand;
 import com.eomcs.lms.handler.BoardDetailCommand;
@@ -25,7 +26,7 @@ public class App {
     //LessonHandler lessonHandler = new LessonHandler(keyboard, new ArrayList<>());
     //MemberHandler memberHandler = new MemberHandler(keyboard, new LinkedList<>());
 
-    BoardDao boardDao = new BoardDao();
+    BoardDao boardDao = new MariaDBBoardDao();
     
     HashMap<String,Command> commandMap = new HashMap<>();
 
