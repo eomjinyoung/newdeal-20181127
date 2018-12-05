@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+  <!-- DB 연결정보를 담은 프로퍼티 파일을 읽는다. -->
+  <properties resource="com/eomcs/lms/conf/jdbc.properties"></properties>
+
+  <!-- 도메인 클래스에 대해 별명을 부여한다. -->
+  <typeAliases>
+    <package name="com.eomcs.lms.domain"/>
+  </typeAliases>
+  
+  <!-- DB 연결 정보를 설정한다. -->
+  <environments default="development">
+    <environment id="development">
+    
+      <!-- 트랜잭션 관리자는 기본 JDBC API를 사용한다. -->
+      <transactionManager type="JDBC"/>
+      
+      <!-- DB 커넥션풀 -->
+      <dataSource type="POOLED">
+        <property name="driver" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+      </dataSource>
+    </environment>
+  </environments>
+  
+  <!-- SQL을 보관한 XML 파일 경로 -->
+  <mappers>
+    <mapper resource="com/eomcs/lms/mapper/BoardMapper.xml"/>
+    <mapper resource="com/eomcs/lms/mapper/MemberMapper.xml"/>
+  </mappers>
+</configuration>
+
+
+
+
+
+
+
+

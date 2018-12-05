@@ -78,3 +78,7 @@
 
 - 자바 소스에서 SQL 코드를 분리하라!
 - JDBC 코드를 캡슐화한 MyBatis로 대체하라!
+
+## 50 : Spring IoC Container 도입
+
+- 객체 생성과 소멸을 Spring IoC 컨테이너에게 맡겨라!
