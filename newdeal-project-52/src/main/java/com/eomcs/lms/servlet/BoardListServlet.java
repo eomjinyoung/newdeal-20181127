@@ -50,22 +50,41 @@ public class BoardListServlet extends HttpServlet {
       HttpServletRequest req, HttpServletResponse res)
       throws ServletException, IOException {
 
-    res.setContentType("text/plain;charset=UTF-8");
+    res.setContentType("text/html;charset=UTF-8");
     PrintWriter out = res.getWriter();
-    out.println("게시물 목록");
+    
+    out.println("<!DOCTYPE html>");
+    out.println("<html>");
+    out.println("<head>");
+    out.println("<meta charset='UTF-8'>");
+    out.println("<title>게시물</title>");
+    out.println("</head>");
+    out.println("<body>");
+    out.println("<h1>게시물</h1>");
+    out.println("<table border='1'>");
+    out.println("<tr>");
+    out.println("  <th>번호</th><th>내용</th><th>작성일</th><th>조회수</th>");
+    out.println("</tr>");
     
     try {
       List<Board> list = boardDao.findAll();
       
       for (Board board : list) {
-        out.printf("%3d, %-20s, %s, %d\n", 
+        out.println("<tr>");
+        out.printf("<td>%d</td><td>%s</td><td>%s</td><td>%d</td>",
             board.getNo(), 
             board.getContents(), 
             board.getCreatedDate(), 
             board.getViewCount());
+        out.println("</tr>");
       }
+      
     } catch (Exception e) {
       e.printStackTrace();
     }
+    out.println("</table>");
+    out.println("</body>");
+    out.println("</html>");
+
   }
 } 
