@@ -37,3 +37,9 @@
 
 - JSTL 구현 라이브러리를 가져온다.
     - mvnrepository.com에서 `jstl` 로 검색한다.
+
+### MVC 아키텍처 적용
+
+### HttpSession을 이용한 로그인/로그아웃
+
+### Filter를 이용하여 서블릿을 실행하기 전에 특정 작업을 수행한다.
