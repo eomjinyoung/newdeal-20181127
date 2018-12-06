@@ -1,8 +1,8 @@
 package com.eomcs.lms.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -50,41 +50,25 @@ public class BoardListServlet extends HttpServlet {
       HttpServletRequest req, HttpServletResponse res)
       throws ServletException, IOException {
 
-    res.setContentType("text/html;charset=UTF-8");
-    PrintWriter out = res.getWriter();
-    
-    out.println("<!DOCTYPE html>");
-    out.println("<html>");
-    out.println("<head>");
-    out.println("<meta charset='UTF-8'>");
-    out.println("<title>게시물</title>");
-    out.println("</head>");
-    out.println("<body>");
-    out.println("<h1>게시물</h1>");
-    out.println("<table border='1'>");
-    out.println("<tr>");
-    out.println("  <th>번호</th><th>내용</th><th>작성일</th><th>조회수</th>");
-    out.println("</tr>");
-    
     try {
       List<Board> list = boardDao.findAll();
       
-      for (Board board : list) {
-        out.println("<tr>");
-        out.printf("<td>%d</td><td>%s</td><td>%s</td><td>%d</td>",
-            board.getNo(), 
-            board.getContents(), 
-            board.getCreatedDate(), 
-            board.getViewCount());
-        out.println("</tr>");
-      }
+      // 게시물 목록을 JSP가 사용할 수 있도록 보관소 저장한다.
+      req.setAttribute("list", list);
+      
+      // JSP로 실행을 위임한다.
+      RequestDispatcher rd = req.getRequestDispatcher(
+          "/board/list.jsp");
+      
+      // 출력 콘텐트의 타입을 include 하는 쪽에서 지정해야 한다.
+      res.setContentType("text/html;charset=UTF-8");
+      rd.include(req, res);
       
     } catch (Exception e) {
       e.printStackTrace();
     }
-    out.println("</table>");
-    out.println("</body>");
-    out.println("</html>");
-
   }
 } 
+
+
+

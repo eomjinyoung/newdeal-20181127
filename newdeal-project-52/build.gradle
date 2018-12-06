@@ -36,6 +36,9 @@ dependencies {
     //    개발하는 동안에만 사용하고, 배치할 때는 제외한다.
     providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
     
+    // JSTL 라이브러리
+    compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+    
     compile 'com.google.guava:guava:23.0'
     testCompile 'junit:junit:4.12'
 }
