@@ -21,7 +21,13 @@
 </tr>
 <tr>
   <th>수업</th>
-  <td><input type="text" name="lessonNo"></td>
+  <td>
+    <select name="lessonNo">
+    <c:forEach items="${lessons}" var="map">
+      <option value="${map.lessonNo}">${map.title}</option>
+    </c:forEach>
+    </select>
+  </td>
 </tr>
 <tr>
   <th></th>
