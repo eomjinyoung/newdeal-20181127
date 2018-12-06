@@ -8,6 +8,9 @@
 <title>게시물</title>
 </head>
 <body>
+
+<jsp:include page="/header.jsp"></jsp:include>
+
 <h1>게시물 상세정보</h1>
 
 <form action="update" method="post">

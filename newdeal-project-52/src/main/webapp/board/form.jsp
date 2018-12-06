@@ -11,23 +11,27 @@
 
 <jsp:include page="/header.jsp"></jsp:include>
 
-<h1>게시물</h1>
+<h1>게시물 등록</h1>
 
-<p><a href='add'>새 글</a></p>
-
+<form action="add" method="post">
 <table border='1'>
 <tr>
-  <th>번호</th><th>내용</th><th>작성일</th><th>조회수</th>
+  <th>내용</th>
+  <td><textarea name="contents" rows="5" cols="50"></textarea></td>
 </tr>
-<c:forEach items="${list}" var="board">
 <tr>
-  <td>${board.no}</td>
-  <td><a href="detail?no=${board.no}">${board.contents}</a></td>
-  <td>${board.createdDate}</td>
-  <td>${board.viewCount}</td>
+  <th>수업</th>
+  <td><input type="text" name="lessonNo"></td>
 </tr>
-</c:forEach>
+<tr>
+  <th></th>
+  <td>
+    <button>등록</button>
+    <button type="button" onclick="location.href='list'">취소</button></td>
+</tr>
 </table>
+</form>
+
 </body>
 </html>
 
