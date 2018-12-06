@@ -5,23 +5,20 @@
 <html>
 <head>
 <meta charset='UTF-8'>
+<meta http-equiv="Refresh" content="1;url=list">
 <title>게시물</title>
 </head>
 <body>
-<h1>게시물2</h1>
-<table border='1'>
-<tr>
-  <th>번호</th><th>내용</th><th>작성일</th><th>조회수</th>
-</tr>
-<c:forEach items="${list}" var="board">
-<tr>
-  <td>${board.no}</td>
-  <td><a href="detail?no=${board.no}">${board.contents}</a></td>
-  <td>${board.createdDate}</td>
-  <td>${board.viewCount}</td>
-</tr>
-</c:forEach>
-</table>
+<h1>게시물 삭제</h1>
+
+<c:choose>
+  <c:when test="${count == 0}">
+    <p>해당 번호의 게시물이 없습니다.</p>
+  </c:when>
+  <c:otherwise>
+    <p>삭제하였습니다.</p>
+  </c:otherwise>
+</c:choose>
 </body>
 </html>
 

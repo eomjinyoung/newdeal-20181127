@@ -66,6 +66,7 @@ public class BoardListServlet extends HttpServlet {
       
     } catch (Exception e) {
       e.printStackTrace();
+      throw new ServletException(e);
     }
   }
 } 
