@@ -4,10 +4,10 @@
 <div>
 <c:if test="${loginUser != null}">
 ${loginUser.name}
-<a href='/auth/logout'>로그아웃</a>
+<a href='/app/auth/logout'>로그아웃</a>
 </c:if>
 <c:if test="${loginUser == null}">
-<a href='/auth/login'>로그인</a>
+<a href='/app/auth/form'>로그인</a>
 </c:if> 
 </div>
     
