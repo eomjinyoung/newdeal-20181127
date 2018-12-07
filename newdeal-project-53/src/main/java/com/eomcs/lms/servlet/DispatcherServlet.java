@@ -41,10 +41,13 @@ public class DispatcherServlet extends HttpServlet {
       // 페이지 컨트롤러의 메서드를 호출한다.
       String viewUrl = controller.execute(request, response);
       
-      // PageController가 알려준 JSP를 include 한다.
-      RequestDispatcher rd = request.getRequestDispatcher(viewUrl);
-      rd.include(request, response);
-      
+      if (viewUrl.startsWith("redirect:")) {
+        response.sendRedirect(viewUrl.replace("redirect:",""));
+      } else {
+        // PageController가 알려준 JSP를 include 한다.
+        RequestDispatcher rd = request.getRequestDispatcher(viewUrl);
+        rd.include(request, response);
+      }
     } catch (Exception e) {
       e.printStackTrace();
       throw new ServletException(e);
