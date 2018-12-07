@@ -1,6 +1,7 @@
 package com.eomcs.lms.servlet;
 
 import java.io.IOException;
+import java.util.HashMap;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -43,10 +44,11 @@ public class LoginServlet extends HttpServlet {
       throws ServletException, IOException {
     
     try {
-      String email = request.getParameter("email");
-      String password = request.getParameter("password");
+      HashMap<String,Object> params = new HashMap<>();
+      params.put("email", request.getParameter("email"));
+      params.put("password", request.getParameter("password"));
       
-      Member member = memberDao.findByEmailPassword(email, password);
+      Member member = memberDao.findByEmailPassword(params);
       
       // 해당 클라이언트를 위한 HttpSession 객체가 있다면,
       // 그 객체를 리턴한다.
