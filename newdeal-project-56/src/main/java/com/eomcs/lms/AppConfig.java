@@ -117,8 +117,7 @@ public class AppConfig {
   //    다음 메서드는 제거한다.
   @Bean
   public ViewResolver viewResolver() {
-    InternalResourceViewResolver vs = 
-        new InternalResourceViewResolver();
+    InternalResourceViewResolver vs = new InternalResourceViewResolver();
     vs.setPrefix("/WEB-INF/jsp/");
     vs.setSuffix(".jsp");
     vs.setViewClass(JstlView.class);
