@@ -21,16 +21,17 @@
         <filter-name>CharacterEncodingFilter</filter-name>
         <url-pattern>/app/*</url-pattern>
     </filter-mapping>
-    
+
+    <!-- 자바 설정으로 DispatcherServlet을 등록한다면 
+         다음과 같이 web.xml로 설정할 필요가 없다. -->
+    <!--      
     <servlet>
         <servlet-name>app</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <!--  
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>/WEB-INF/spring/app-servlet.xml</param-value>
         </init-param>
-        -->
         <load-on-startup>1</load-on-startup>
     </servlet>
 
@@ -38,7 +39,8 @@
         <servlet-name>app</servlet-name>
         <url-pattern>/app/*</url-pattern>
     </servlet-mapping>
-
+    -->
+    
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
         <welcome-file>index.xhtml</welcome-file>

@@ -2,18 +2,25 @@ package com.eomcs.lms;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import org.springframework.web.WebApplicationInitializer;
+import javax.servlet.ServletRegistration;
+import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.servlet.DispatcherServlet;
 
 // WebApplicationInitializer 구현체는 
 // 웹 애플리케이션이 시작될 때 실행된다.
-public class MyWebApplicationInitializer implements WebApplicationInitializer {
+// => 이 클래스에서 Sprint의 프론트 컨트롤러인 DispatcherServlet을 등록한다.
+// => 이 클래스 보다 더 쉽게 DispatcherServlet을 등록하는 방법은 
+//    AbstractAnnotationConfigDispatcherServletInitializer 의 
+//    서브 클래스를 만드는 것이다.
+public class MyWebApplicationInitializer /*implements WebApplicationInitializer*/ {
 
-  @Override
+  //@Override
   public void onStartup(ServletContext servletContext) throws ServletException {
+    System.out.println("MyWebApplicationInitializer.onStartup()...");
     /* /WEB-INF/web.xml에서 DisparcherServlet을 준비한다면 
      * 다음 코드는 주석으로 막아라!
      */
-    /*
+    
     // 이 메서드가 호출될 때 할 일
     
     // 1) 프론트 컨트롤러가 사용할 Spring IoC 컨테이너를 준비한다.
@@ -44,7 +51,7 @@ public class MyWebApplicationInitializer implements WebApplicationInitializer {
     
     // - 프론트 컨트롤러의 URL을 지정한다.
     registration.addMapping("/app/*");
-    */
+    
   }
 
 }

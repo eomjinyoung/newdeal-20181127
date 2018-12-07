@@ -8,10 +8,14 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.JstlView;
 
 // AnnotationConfigWebApplicationContext iocContainer = 
 //      new AnnotationConfigWebApplicationContext();
@@ -21,13 +25,13 @@ import org.springframework.transaction.PlatformTransactionManager;
 // 그러나 XML 설정을 사용할 경우 @Configuration 애노테이션을 
 // 붙여야만 IoC 컨테이너가 이 클래스에 대해 스프링 설정 정보를 
 // 다루는 클래스임을 인식 할 수 있다.
-@Configuration
+//@Configuration
 
 // Spring IoC 컨테이너에게 패키지 이름을 알려주면 
 // 그 패키지를 뒤져서 @Component가 붙은 클래스에 대해 
 // 인스턴스를 자동으로 생성해준다.
 // => XML 설정에 추가되어 있다면 다음은 제거한다. 
-//@ComponentScan("com.eomcs.lms")
+@ComponentScan("com.eomcs.lms")
 
 // Spring IoC 컨테이너에게 프로퍼티 파일을 로딩할 것을 명령한다.
 @PropertySource("classpath:/com/eomcs/lms/conf/jdbc.properties")
@@ -41,6 +45,9 @@ import org.springframework.transaction.PlatformTransactionManager;
 // => 인터페이스의 메서드 이름, 파라미터, 리턴 타입이
 //    SQL 매퍼의 아이디, 파라미터, 리턴 타입과 같아야 한다.
 @MapperScan("com.eomcs.lms.dao")
+
+// WebMVC 관련 애노테이션이나 설정을 활성화시켜 사용할 수 있도록 한다.
+@EnableWebMvc
 public class AppConfig {
   
   // Spring IoC 컨테이너가 로딩한 프로퍼티 정보를 가져오기
@@ -108,7 +115,6 @@ public class AppConfig {
   // 설정된 경로를 붙인다.
   // => XML에서 ViewResolver 객체를 준비했다면 
   //    다음 메서드는 제거한다.
-  /*
   @Bean
   public ViewResolver viewResolver() {
     InternalResourceViewResolver vs = 
@@ -118,7 +124,6 @@ public class AppConfig {
     vs.setViewClass(JstlView.class);
     return vs;
   }
-  */
 }
 
 
