@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.eomcs.lms.dao.LessonDao">
+
+  <resultMap type="lesson" id="lessonMap">
+    <id column="lno" property="no"/>
+    <result column="title" property="title"/>
+    <result column="cont" property="contents"/>
+    <result column="sdt" property="startDate"/>
+    <result column="edt" property="endDate"/>
+    <result column="tot_hr" property="totalHours"/>
+    <result column="day_hr" property="dayHours"/>
+    <result column="mno" property="ownerNo"/>
+  </resultMap>
+
+  <select id="findByParticipantNo" 
+          resultType="hashmap" parameterType="int">
+    select 
+      lm.mno memberNo, 
+      l.lno lessonNo,
+      l.title
+    from les_memb lm
+      join lesson l on lm.lno=l.lno 
+    where lm.mno=#{value}
+  </select>
+  
+</mapper>
+
+
+
+
+
+
+
